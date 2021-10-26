@@ -1,21 +1,34 @@
-/*this is my first c program
-this is called as comment*/
-/*preprocessor directives*/
 #include<stdio.h>
 #include<conio.h>
-/*global varible declaration*/
+
+
 int main()
 {
- 
- float pie =3.142,area;
- int radius=5;
- area=pie*radius*radius;
- 
- 
- 
- printf("\n area of circle = %8.2f",area);
+   int size, i, arr[MAX];
+   int *ptr;
+
+   ptr = &arr[0];
+
+   printf("Enter the size of array :: ");
+   scanf("%d", &size);
+
+   printf("\nEnter %d integers into array:\n ", size);
+   for (i = 0; i < size; i++)
+  {
+      printf("\nEnter %d integer into array: ", i+1);
+      scanf("%d", ptr);
+      ptr++;
+   }
+
+   ptr = &arr[size - 1];
+
+   printf("\nElements of array in reverse order are :\n");
+
+   for (i = size - 1; i >= 0; i--) {
+      printf("\n\nElement %d is %d  ", i+1, *ptr);
+      ptr--;
+   }
 
  return 0;
- 
- }
+}
 
